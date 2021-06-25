@@ -1,0 +1,427 @@
+/*-------------------------------------------------------
+
+ Theme Name: Phototime
+ Theme URI: http://phototime.com
+ Description: The Multi-Purpose Onepage Template
+ Author: Emil Sadekin Islam
+ Author URI: http://emil.com
+ Version: 1.0
+
+ Main Color   : #16a085
+ Main Font    : GothamRounded
+
+-----------------------------------------*/
+/* ---------------------------------------
+
+ == Table Of Content
+
+  01 Import Fonts
+  02 Variables
+	03 Reset
+	04 Buttons
+	05 Header
+	06 Photo
+	07 Design
+	08 Community
+	09 Subscribe
+	10 Download
+	11 Footer
+
+ ----------------------------------------------------*/
+
+ /* -------------------------------
+      01 [ Import Fonts ]
+  ---------------------------------*/
+ @font-face{
+ 	font-family: GothamRoundedMedium;
+ 	src: url('assets/fonts/GothamRoundedMedium.ttf');
+ }
+ @font-face{
+ 	font-family: GothamRoundedBold;
+ 	src: url('assets/fonts/GothamRoundedBold.ttf');
+ }
+  @font-face{
+ 	font-family: GothamRoundedBook;
+ 	src: url('assets/fonts/GothamRoundedBook.ttf');
+ }
+
+/* -------------------------------
+    02 [ Start Variables ]
+ ---------------------------------*/
+ $primary-clr: #16a085;
+ $secondary-clr: #373737;
+ $white-clr: #ffffff;
+ $btns-hvr-clr: #168e77;
+ $sec-bg-clr: #f5f6f7;
+ $gotham-medium: GothamRoundedMedium;
+ $gotham-bold: GothamRoundedBold;
+ $gotham-book: GothamRoundedBook;
+ $text-upper: uppercase;
+ $text-capitalize: capitalize;
+ $text-lower: lowercase;
+ $ls-03: .3rem;
+
+/* -------------------------------
+    03 [ Start Reset ]
+---------------------------------*/
+html{
+  font-size: 62.5%;
+  // Body Tag
+  body{
+    font-family: $gotham-medium;
+    letter-spacing: $ls-03;
+    // Anchor Tag
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+    // Unorder List Tag
+    ul{
+      list-style: none;
+    }
+    // Heading Tags
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6{
+    	font-family: $gotham-bold;
+    	color: $secondary-clr;
+    }
+  }
+}
+.photo p,
+.design p{
+	font-family: $gotham-book;
+	color: $secondary-clr;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+  margin-top: 4rem;
+  width: 50rem;
+  span{
+    font-family: $gotham-bold;
+  }
+}
+.photo .content h5,
+.design h5,
+.download h5{
+  width: 35.4rem;
+  color: $primary-clr !important;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+}
+.community-area .next:after,
+.community-area .prev:after,
+.design-area .pore:after,
+.design-area .aage:after{
+  font-size: 1.8rem !important;
+  color: #000000;
+  font-weight: bold;
+}
+
+/* --------------------------------------------
+  04 [ Start Buttons ]
+----------------------------------------------*/
+@mixin button{
+  background-color: $primary-clr;
+  padding: 1.6rem 3rem;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  color: $white-clr;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  text-transform: $text-upper;
+}
+
+/* ----------------------------------------------
+    05 [ Start Header ]
+------------------------------------------------*/
+.main-bg{
+  padding: 4rem 0 2rem;
+  text-align: center;
+  // Navigation
+  nav{
+    .logo{
+      display: block;
+      margin: 0 3rem;
+    }
+    .main-menu{
+      li{
+        &:not(:last-child){
+          margin-right: 2.5rem;
+        }
+        &:not(:first-child){
+          margin-left: 2.5rem;
+        }
+        a{
+          color: $white-clr !important;
+          font-family: $gotham-bold;
+          text-transform: uppercase;
+          font-size: 1.5rem;
+          &:hover{
+            color: $primary-clr !important;
+          }
+        }
+      }
+    }
+  }
+  // Hero Part
+  .hero-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16rem 0;
+    .content{
+      h1{
+        color: $white-clr;
+        text-transform: $text-upper;
+        font-size: 4rem;
+        letter-spacing: .5rem;
+      }
+      p{
+        font-size: 1.6rem;
+        color: $white-clr;
+        margin-top: 1rem;
+      }
+      a{
+        @include button;
+        margin-top: 2rem;
+        &:hover{
+          background-color: $btns-hvr-clr;
+        }
+      }
+    }
+  }
+  .social-icon{
+    font-size: 2.2rem;
+    color: $white-clr;
+    a{
+      margin: 0 .5rem;
+      &:hover{
+        color: $primary-clr;
+      }
+    }
+  }
+}
+
+/* ------------------------------------------------
+    06 [ Start Photo ]
+--------------------------------------------------*/
+.photo{
+  background-color: #f5f6f7;
+  background-repeat: no-repeat;
+  background-position: 85% -48%;
+  padding: 10rem 0;
+  .content{
+    a{
+      @include button;
+      margin-top: 3rem;
+      &:hover{
+        background-color: $btns-hvr-clr;
+      }
+    }
+  }
+}
+
+/* -----------------------------------------------
+    07 [ Start Design ]
+-------------------------------------------------*/
+.design-area{
+  padding: 16rem 0;
+  overflow: hidden;
+  .design-phone{
+    position: absolute;
+    bottom: -36rem;
+  }
+  .design{
+    position: unset;
+    .pore{
+      top: 34rem;
+      right: 50rem;
+    }
+    .aage{
+      top: 34rem;
+    }
+    .custom-pagination{
+      width: 7rem;
+      left: .7rem;
+      bottom: -5rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: .1rem;
+    }
+    a{
+      @include button;
+      margin-top: 3rem;
+      &:hover{
+        background-color: $btns-hvr-clr;
+      }
+    }
+  }
+}
+
+/* --------------------------------------------
+    08 [ Start Community ]
+----------------------------------------------*/
+.community-area{
+  background-color: $sec-bg-clr;
+  padding: 13rem 0;
+  .community{
+    position: unset;
+    text-align: center !important;
+    .swiper-slide{
+      position: relative;
+      &:hover .content-box{
+        opacity: 1;
+      }
+      .content-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: $sec-bg-clr;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: all .3s;
+        h5{
+          text-transform: uppercase;
+          font-size: 1.6rem;
+          margin-top: 30px;
+        }
+        p{
+          width: 174px;
+          margin-top: 20px;
+        }
+      }
+    }
+    .next{
+      top: -16px;
+      right: 0;
+    }
+    .prev{
+      left: 1088px;
+      top: -16px;
+    }
+  }
+}
+/* ------------------------------------------
+    09 [ Start Subscribe ]
+--------------------------------------------*/
+.subscribe{
+  padding: 25rem 0;
+  h4{
+    font-size: 2.2rem;
+    text-transform: $text-upper;
+    color: $white-clr;
+  }
+  form{
+    width: 38rem;
+    margin: 3rem auto 0;
+    input{
+      font-size: 2rem;
+      padding: 1rem 1rem;
+    }
+    button{
+      font-size: 1.8rem;
+      padding: 0 2rem;
+      background-color: $primary-clr;
+      color: $white-clr;
+      border: 0;
+      &:hover{
+        background-color: $btns-hvr-clr;
+      }
+    }
+  }
+}
+
+/* -------------------------------------------
+     10 [ Start Download ]
+-----------------------------------------*/
+.download{
+  padding: 10rem 0;
+  background-color: $sec-bg-clr;
+  h5{
+    width: auto;
+    font-size: 2rem;
+    color: $secondary-clr !important;
+  }
+  p{
+    color: $secondary-clr;
+    font-size: 1.2rem;
+    text-transform: $text-upper;
+    margin: 1rem auto 0;
+    width: 94.5rem;
+    line-height: 2rem;
+  }
+  .buttons{
+    margin-top: 4.5rem;
+    .apple-btn{
+      margin-right: 2.5rem;
+    }
+    a{
+      @include button;
+      background-color: #1abc9c !important;
+      border-radius: 3px 0 0 3px;
+      &:hover{
+        background-color: $primary-clr !important;
+      }
+    }
+    span{
+      background-color: $primary-clr;
+      font-size: 2.5rem;
+      color: #fff;
+      padding: 6px 15px 7px;
+      border-radius: 0 3px 3px 0;
+    }
+  }
+}
+
+/* ------------------------------------------
+      11 [ Start Footer ]
+---------------------------------------------*/
+.footer-part{
+  padding: 4rem 0;
+  .content{
+    .f-menu{
+      ul{
+        padding: 0;
+        li{
+          display: inline-block;
+          position: relative;
+          &:not(:last-child){
+            margin-right: 10px;
+          }
+          &:hover a{
+            color: $primary-clr;
+          }
+          &:nth-child(1) a:after,
+          &:nth-child(2) a:after{
+            content: '';
+            position: absolute;
+            top: 3px;
+            right: -8px;
+            width: 2px;
+            height: 11px;
+            background-color: $primary-clr;
+          }
+          a{
+            text-transform: $text-upper;
+            font-size: 1.2rem;
+            font-family: $gotham-bold;
+          }
+        }
+      }
+      p{
+        font-size: 1.1rem;
+        font-family: $gotham-bold;
+      }
+    }
+  }
+}
